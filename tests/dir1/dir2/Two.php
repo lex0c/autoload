@@ -1,4 +1,4 @@
-<?php
+<?php namespace Tests\Dir1\Dir2;
 
 class Two
 {	
