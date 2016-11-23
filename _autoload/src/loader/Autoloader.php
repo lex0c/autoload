@@ -83,8 +83,8 @@ class Autoloader implements LoaderInterface
         endif;
         
         /**
-         * Retorna uma exceção caso não encontre o indice "dir-level" no array.
-         * @throws RuntimeException 
+         * Retorna uma exceção caso não encontre o indice "dirlevel" no array.
+         * @throws RuntimeException
          */
         throw new RuntimeException("Key 'dirlevel' not found! run(['dirlevel' => ])!");
     }
@@ -163,7 +163,7 @@ class Autoloader implements LoaderInterface
          * @throws RuntimeException
          */
         if($notFind):
-            throw new RuntimeException("Archive '{$file}' not found in '{$baseDir}'!");
+            throw new RuntimeException("File '{$file}' not found in '{$baseDir}'!");
         endif;
     }
 
