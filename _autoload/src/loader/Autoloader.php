@@ -112,7 +112,7 @@ class Autoloader implements LoaderInterface
         else:
             
             /**
-             * Retorna uma exceção caso não tenha um valor valido no "dir-level"
+             * Retorna uma exceção caso não tenha um valor valido no "dirlevel"
              * @throws RuntimeException 
              */
             throw new RuntimeException("Value of 'dirlevel' defined in 'run()' invalid!");
@@ -182,7 +182,7 @@ class Autoloader implements LoaderInterface
                 else:
                     
                     /**
-                     * Retorna uma exceção se o namespace não estiver definido corertamente.
+                     * Retorna uma exceção se o namespace não estiver definido corretamente.
                      * @throws RuntimeException
                      */
                     throw new RuntimeException("Namespace not defined in '{$className}'.");
@@ -220,7 +220,7 @@ class Autoloader implements LoaderInterface
                     $dir .= (substr($dir, -1) == '/')?str_replace('/', $separator, $dir):$separator;
                 endif;
                 
-                //Faz uma busca baseada nos niveis da aplicação definidos no arquivo 'autoload'
+                //Faz uma busca baseada nos niveis da aplicação definidos no 'dirlevel'
                 foreach(self::$levels as $level):
                     $level = str_replace(str_replace('//', '/', $level), self::$separator, $level);
                     $baseDir = self::$thisDir . $level;
