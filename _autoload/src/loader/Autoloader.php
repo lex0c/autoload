@@ -203,10 +203,10 @@ class Autoloader implements LoaderInterface
             $baseDir = self::$thisDir . $separator . '..';
 
             /**
-             * Checa se o diretório já foi incluido.
+             * Checa se a classe já foi incluida.
              * @var boolean
              */
-            $dirIncluded = false;
+            $classIncluded = false;
 
             /**
              * Define a extenção dos arquivos.
@@ -231,9 +231,9 @@ class Autoloader implements LoaderInterface
                 endforeach;
                 
                 //Faz o include da classe
-                if((!$dirIncluded) && (is_readable($classFile)) && (!is_dir($classFile))):
+                if((!$classIncluded) && (is_readable($classFile)) && (!is_dir($classFile))):
                     require_once (\str_replace('//', '/', $classFile));
-                    $dirIncluded = true;
+                    $classIncluded = true;
                 endif;
             endforeach;
 
@@ -241,7 +241,7 @@ class Autoloader implements LoaderInterface
              * Retorna uma exceção caso não encontre a classe requisitada.
              * @throws RuntimeException 
              */
-            if(!$dirIncluded):
+            if(!$classIncluded):
                 throw new RuntimeException("Class '{$className}.{$ext}' not found in '{$baseDir}'!");
             endif;
         });
